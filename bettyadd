@@ -4,7 +4,7 @@ function=$(ls -l | grep -E "*.c$" | wc -l)
 
 if [[ $function -gt 0  &&  $# -ne 0 ]]
 then
-	error=$(betty $@ | grep -e "[WARNING|ERROR]" | grep -v "README.md" | wc -l)
+	error=$(betty $@ | grep -e "[WARNING|ERROR]" | wc -l)
 else 
 	echo -e "No files to verify"
 	exit
